@@ -1,0 +1,103 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data files - DO NOT COMMIT LARGE FILES
+data/raw/*.csv
+data/raw/*.pkl
+data/raw/*.feather
+data/raw/*.parquet
+data/raw/*.dta
+data/raw/*.sav
+data/raw/*.xlsx
+
+# Keep small sample files
+!data/raw/sample.csv
+!data/raw/.gitkeep
+
+# Processed data (intermediate)
+data/processed/*
+!data/processed/.gitkeep
+
+# External data
+data/external/*
+!data/external/.gitkeep
+!data/external/regional_mw_sample.csv
+
+# Results
+results/figures/*
+!results/figures/.gitkeep
+results/tables/*
+!results/tables/.gitkeep
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Large output files
+*.pdf
+!presentations/proposal.pdf
+
+# PDF files
+*.pdf
+!presentations/proposal/*.pdf
+# PDF files
+*.pdf
+!presentations/proposal/*.pdf
