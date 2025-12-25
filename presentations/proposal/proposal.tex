@@ -1,5 +1,5 @@
-\documentclass{beamer}
-
+\documentclass[10pt]{beamer}
+\usepackage{booktabs}
 \usetheme{Warsaw}
 \usecolortheme{default}
 \setbeamercolor{frametitle}{bg=blue, fg=white}
@@ -141,57 +141,101 @@ Minimum wage policy has long been debated in economic theory.
 \framesubtitle{Primary Focus}
 
 \textbf{Main Question:}
-How do minimum wage changes affect occupational structure across Russian regions?
 
-\vspace{0.2cm}
-\textbf{Theoretical Motivation:} MW may cause occupational substitution, upgrading, or regional sorting
+How do minimum wage changes affect occupational mobility and structure across Russian regions?
 
 \vspace{0.3cm}
+
 \textbf{Specific Questions:}
 \begin{enumerate}
-  \item Which occupations cluster at minimum wage thresholds?
-  \item How do adjustment mechanisms differ by sector?
-  \item What are the regional patterns of occupational change?
+  \item Which occupations are most exposed to minimum wage increases?
+  \item Do minimum wage changes induce occupational transitions across sectors and employment forms?
+  \item How do occupational adjustment responses differ across regions?
 \end{enumerate}
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}{Research Hypotheses}
-\framesubtitle{Testable Predictions}
+\begin{frame}{Working Hypotheses}
+\small
+\framesubtitle{Proposed Testable Predictions}
+
+\footnotesize{\textit{Note: These hypotheses are considered preliminary and may be refined during the analysis.}}
 
 \begin{columns}[T]
 \begin{column}{0.48\textwidth}
-\textbf{H1: Occupational Incidence}
+
+\textbf{H1: Occupational Exposure}
 \begin{itemize}
-  \item Low-skill service occupations show highest MW concentration
-  \item Concentration patterns differ by region
+  \item Low-skill and routine service occupations exhibit the highest exposure to minimum wage increases.
+  \item Exposure intensity varies across regions.
 \end{itemize}
 
-\vspace{0.3cm}
-\textbf{H2: Adjustment Mechanisms}
+\vspace{0.2cm}
+
+\textbf{H2: Occupational Adjustment}
 \begin{itemize}
-  \item Formal firms: Task reorganization
-  \item Informal sector: Non-compliance
+  \item Minimum wage increases raise occupational transition rates among exposed workers.
+  \item Transitions occur primarily within similar skill-level occupations.
 \end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{H4: Informal Sector Response}
+\begin{itemize}
+  \item Informal employment rises in high-MW regions for occupations heavily exposed to the minimum wage.
+  \item Effects are stronger in regions with weaker labor institutions.
+\end{itemize}
+
 \end{column}
 
 \begin{column}{0.48\textwidth}
+
 \textbf{H3: Regional Heterogeneity}
 \begin{itemize}
-  \item High-MW regions: Occupational upgrading
-  \item Border regions: Cross-regional mobility
+  \item High minimum-wage regions experience greater occupational displacement among exposed workers.
+  \item Border regions exhibit higher cross-regional labor reallocation following minimum wage changes.
 \end{itemize}
 
-\vspace{0.3cm}
-\textbf{Theoretical Basis:}
+\vspace{0.2cm}
+
+\textbf{H5: Sectoral Spillovers}
 \begin{itemize}
-  \item Neoclassical labor demand model
-  \item Task-based occupational approach
-  \item Russian institutional context
+  \item Minimum wage increases in one sector may affect wages and employment in adjacent sectors.
+  \item Spillover magnitude depends on occupational similarity and regional labor market tightness.
 \end{itemize}
+
 \end{column}
 \end{columns}
 \end{frame}
+
+
+
+%------------------------------------------------
+\begin{frame}{Hypotheses and Methodology Mapping}
+\small
+\framesubtitle{How Each Hypothesis Will Be Tested}
+
+\footnotesize{\textit{This mapping guides the empirical approach for each working hypothesis.}}
+
+\begin{tabular}{p{3.5cm} p{6.5cm}}
+\toprule
+\textbf{Hypothesis} & \textbf{Methodology / Approach} \\
+\midrule
+H1: Occupational Exposure & Stage 1: Descriptive Mapping of MW concentration by occupation and region. Identify which occupations have the highest share of workers near the MW. \\
+\midrule
+H2: Occupational Adjustment & Stage 2: Difference-in-Differences (DiD) analysis with leads/lags of MW exposure. Track occupational transitions over time across treated and control regions. \\
+\midrule
+H3: Regional Heterogeneity & Stage 2 DiD with subsample analysis (high vs low MW regions, urban vs rural) and Stage 3 Border Analysis to capture cross-regional reallocation. \\
+\midrule
+H4: Informal Sector Response & Stage 2 DiD with subsample analysis of formal vs informal workers. Compare changes in informal employment among exposed occupations. \\
+\midrule
+H5: Sectoral Spillovers & Stage 2 and Stage 3 event-study regressions with continuous treatment to detect wage/employment effects in adjacent sectors. Include occupation fixed effects for spillover detection. \\
+\bottomrule
+\end{tabular}
+
+\end{frame}
+
+
 
 %------------------------------------------------
 \begin{frame}{Data Source}
@@ -232,6 +276,7 @@ How do minimum wage changes affect occupational structure across Russian regions
 \textbf{Variable} & \textbf{RLMS Code} \\
 \midrule
 Monthly wage & C4 \\
+Alternative wage measure & G1\_1 \\
 Occupation & C7\_1 \\
 Employment status & C1 \\
 Sector & C2 \\
@@ -247,57 +292,82 @@ Region & REGION \\
 \item Additional controls: Age, gender, education
 \item Regional economic indicators
 \item Time dummies for economic cycles
+\item \textbf{Note:} In formulas, \(w = \text{C4 (Monthly wage)}\)
 \end{itemize}
 \end{frame}
 
+
 %------------------------------------------------
 \begin{frame}{Empirical Strategy}
+\scriptsize
 \framesubtitle{Three-Stage Approach}
 
 \textbf{Stage 1: Descriptive Mapping}
 \[
-\text{MW Concentration}_{ort} = \frac{Emp_{ort,w \leq MW}}{Emp_{rt,w \leq MW}}
+\text{MW Concentration}_{ort} = \frac{Emp_{ort, w \leq MW}}{Emp_{rt, w \leq MW}}, \quad w = \text{C4}
 \]
+Identify occupations most exposed to minimum wage increases.
 
 \vspace{0.3cm}
-\textbf{Stage 2: Difference-in-Differences}
+\textbf{Stage 2: Difference-in-Differences (DiD)}
 \[
-Y_{irt} = \beta_0 + \beta_1 (\text{Post}_t \times \text{HighMW}_r) + \text{Controls}
+Y_{irt} = \beta_0 + \beta_1 (\text{Post}_t \times \text{HighMW}_r) + \gamma_r + \delta_t + X_{irt}\theta + \epsilon_{irt}
 \]
+\begin{itemize}
+\item \textbf{Assumptions:} parallel trends across regions, no spillovers beyond treatment
+\item Regional (\(\gamma_r\)) and year (\(\delta_t\)) fixed effects
+\item Controls: age, gender, education, sector (C2), firm type (C3), formal status (C8)
+\item Dynamic effects: include leads/lags of MW exposure
+\item Subsample analysis: formal vs informal, urban vs rural regions, high vs low MW regions
+\end{itemize}
 
 \vspace{0.3cm}
 \textbf{Stage 3: Border Analysis}
 \[
 Y_i = \alpha + \beta \cdot \mathbf{1}\{\text{MW}_r > \text{MW}_{r'}\} + \epsilon_i
 \]
+\begin{itemize}
+\item Exploit differences across adjacent regions to approximate quasi-experimental variation
+\item Capture cross-regional occupational reallocation
+\item Assumption: neighboring regions are comparable except for MW differences
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}{Methodology}
+\scriptsize
 \framesubtitle{Identification and Robustness}
 
 \textbf{Identification Strategy:}
 \begin{itemize}
-\item Exploit regional MW differences post-2007
-\item Temporal changes in federal MW
+\item Regional MW differences post-2007
+\item Federal MW temporal changes
 \item Interaction of region and time effects
+\item Explicitly account for heterogeneity: occupation-level, sector-level, urban/rural
 \end{itemize}
 
 \vspace{0.3cm}
 \textbf{Statistical Approach:}
 \begin{itemize}
 \item Regional and year fixed effects
-\item Clustered standard errors (region-occupation)
-\item Dynamic event study design
+\item Clustered standard errors at region-occupation level
+\item Dynamic event study for temporal adjustment patterns
+\item Pre-trend checks for DiD validity
 \end{itemize}
 
+\vspace{0.3cm}
 \textbf{Robustness Checks:}
 \begin{itemize}
 \item Alternative wage measures (C4 vs G1\_1)
-\item Different MW bite thresholds (25\%, 30\%, 35\%)
-\item Placebo tests with false reform dates
+\item Different MW bite thresholds: 25\%, 30\%, 35\%
+\item Placebo tests: false reform dates
+\item Occupation fixed effects to control for systematic differences
+\item Continuous treatment: MW relative to regional median wage
+\item Subsample checks: formal vs informal sector, urban vs rural regions, high vs low MW regions
+\item Link robustness to key assumptions (parallel trends, comparability of regions)
 \end{itemize}
 \end{frame}
+ 
 
 %------------------------------------------------
 \begin{frame}{Expected Findings}

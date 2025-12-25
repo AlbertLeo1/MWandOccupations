@@ -15,3 +15,7 @@ How do minimum wage changes affect occupational structures in Russia?
 
 ## Getting Started
 Clone this repository and install requirements.txt
+
+## Paper
+- Edit: paper/proposal.tex
+- Images: paper/figures/
