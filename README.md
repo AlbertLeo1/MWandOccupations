@@ -19,6 +19,7 @@ Empirical analysis of minimum wage effects on occupational structures using in R
 ```mermaid
 flowchart TD
     A[MWandOccupations] --> B[paper/]
+    A --> C[books_ref/]
     A --> C[data/]
     A --> D[notebooks/]
     A --> E[src/]
