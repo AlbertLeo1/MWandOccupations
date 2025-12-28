@@ -1,5 +1,7 @@
 \documentclass[10pt]{beamer}
 \usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
 \usetheme{Warsaw}
 \usecolortheme{default}
 \setbeamercolor{frametitle}{bg=blue, fg=white}
@@ -10,12 +12,16 @@
 Albert Aina, \\ 
 Yahaya Ali \\
 \vspace{0.2cm}
-\textit{Academic Adviser: Associate Prof. Dmitry Rudenko}
+\textit{Academic Adviser: Associate Prof. Dimitry Rudenko}
 }
 \date{17 December, 2025}
 
 \begin{document}
-
+\usebackgroundtemplate{%
+    \begin{tikzpicture}[remember picture,overlay] 
+        \fill[chartreuse, opacity=0.2] (current page.north west) rectangle (current page.south east); 
+        \node[opacity=0.2] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{dag.png}};
+    \end{tikzpicture}}
 %------------------------------------------------
 \begin{frame}
 \titlepage
@@ -24,7 +30,7 @@ Yahaya Ali \\
     \includegraphics[width=0.3\linewidth]{Hse Logo.png}
 \end{figure}
 \end{frame}
-
+\usebackgroundtemplate{}
 %------------------------------------------------
 \begin{frame}{Introduction}
 \framesubtitle{What Is the Minimum Wage?}
@@ -460,7 +466,14 @@ This study provides first analysis of MW effects on occupational dynamics in Rus
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
+ 
+\usebackgroundtemplate{%
+    \begin{tikzpicture}[remember picture,overlay] 
+        \fill[chartreuse, opacity=0.2] (current page.north west) rectangle (current page.south east); 
+        \node[opacity=0.3] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{}};
+    \end{tikzpicture}} 
+
+\begin{frame}[plain]
 \centering
 {\Huge Thank You}
 
@@ -471,5 +484,8 @@ This study provides first analysis of MW effects on occupational dynamics in Rus
 \colorbox{yellow}{\texttt{drudenko@hse.ru}}
 
 \end{frame}
+
+% Reset for safety
+\usebackgroundtemplate{}
 
 \end{document}
