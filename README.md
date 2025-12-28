@@ -8,11 +8,11 @@
 **Year:** 2026
 
 ## 📋 Research Overview
-Empirical analysis of minimum wage effects on occupational structures using RLMS panel data (1994-2024).
+Empirical analysis of minimum wage effects on occupational structures using in Russia.
 
 ## 🔍 Research Questions
 1. Which occupations concentrate at minimum wage thresholds?
-2. How do adjustment mechanisms differ between formal/informal sectors?
+2. Do minimum wage changes induce occupational transitions across sectors and employment forms?
 3. What regional patterns emerge in occupational responses?
 
 ## 🏗️ Project Structure
@@ -62,7 +62,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
-📊 Data Sources
+## 📊 Data Sources
 RLMS-HSE (Russian Longitudinal Monitoring Survey)
 Panel: 1994-2024 (30 years)
 Occupational codes (3-digit OKZ)
