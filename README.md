@@ -61,8 +61,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
-
-## 📊 Data Sources
+```
+### 📊 Data Sources
 RLMS-HSE (Russian Longitudinal Monitoring Survey)
 Panel: 1994-2024 (30 years)
 Occupational codes (3-digit OKZ)
@@ -71,12 +71,12 @@ Regional Minimum Wage Data
 Federal MW levels (2005-2024)
 Regional adjustments (post-2007)
 
-👥 Collaboration
+### 👥 Collaboration
 Use Issues for feedback
 Use Pull Requests for changes
 Review all changes before merging
 
-📧 Contact
+### 📧 Contact
 Albert Aina: aaina@edu.hse.ru
 Yahaya Ali: asyahaya@edu.hse.ru
 Prof. Rudenko: drudenko@hse.ru
