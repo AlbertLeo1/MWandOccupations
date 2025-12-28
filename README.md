@@ -20,11 +20,11 @@ Empirical analysis of minimum wage effects on occupational structures using in R
 flowchart TD
     A[MWandOccupations] --> B[paper/]
     A --> C[books_ref/]
-    A --> C[data/]
-    A --> D[notebooks/]
-    A --> E[src/]
-    A --> F[results/]
-    A --> G[presentations/]
+    A --> D[data/]
+    A --> E[notebooks/]
+    A --> F[src/]
+    A --> G[results/]
+    A --> H[presentations/]
     
     B --> B1[proposal.tex]
     B --> B2[figures/]
