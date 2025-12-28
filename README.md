@@ -1,7 +1,8 @@
 # Minimum Wage and Occupational Dynamics in Russia
 
 **Researchers:** Albert Aina & Yahaya Ali  
-**Academic Adviser:** Assoc. Prof. Dmitry Rudenko, Prof. Alexander Nesterov 
+**Academic Adviser:** Assoc. Prof. Dmitry Rudenko, Prof. Alexander Nesterov
+ 
 **Institution:** HSE University, St. Petersburg, Russia  
 **Program:** Master of Data Analytics for Business and Economics  
 **Year:** 2026
