@@ -38,8 +38,8 @@ flowchart TD
     E --> E2[analysis/]
     E --> E3[visualization/]
     
-    F --> G1[tables/]
-    F --> G2[figures/]
+    G --> G1[tables/]
+    G --> G2[figures/]
 ```
 
 
